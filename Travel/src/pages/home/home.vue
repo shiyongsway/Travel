@@ -1,11 +1,16 @@
 <template>
   <div>
-    <div >Hello World!</div>
+    <HomeHeader></HomeHeader>
   </div>
 </template>
 <script>
-    export default {
+  import HomeHeader from './components/header'
 
+  export default {
+      name:'Home',
+    components:{
+      HomeHeader
+    },
       data(){
         name: "home"
       },
@@ -15,5 +20,5 @@
     }
 </script>
 <style scoped>
- 
+
 </style>
