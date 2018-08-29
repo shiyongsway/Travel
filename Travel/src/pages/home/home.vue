@@ -2,17 +2,19 @@
   <div>
     <HomeHeader></HomeHeader>
     <my-swiper></my-swiper>
-    <div>Test</div>
+    <Icons></Icons>
   </div>
 </template>
 <script>
   import HomeHeader from './components/header'
   import MySwiper from './components/Swiper'
+  import Icons from './components/Icons'
   export default {
       name:'Home',
     components:{
       HomeHeader,
-      MySwiper
+      MySwiper,
+      Icons,
     },
       methods:{
 

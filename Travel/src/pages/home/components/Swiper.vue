@@ -10,8 +10,6 @@
       <div class="swiper-pagination" slot="pagination"></div><!--显示页面图中的小点-->
     </swiper>
   </div>
-
-
 </template>
 
 <script>
@@ -48,8 +46,8 @@
     overflow:hidden
     width :100%
     height :0
-    padding-bottom :31.25%
-    .swiper-pagination-bullet-active
+    padding-bottom :25.87%
+    .swiper-paginatin-bullet-active
       background-color :red !important
     .swiper-img
       width:100%

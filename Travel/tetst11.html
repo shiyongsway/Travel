@@ -6,24 +6,58 @@
 </head>
 
 <style>
-  #Box div{
-    color:red;
+  .icons {
+
   }
-  .important_false{
-    color:blue;
+  .icon{
+    height: 100px;
+    position: relative;
+    /*overflow:hidden*/
+    flow: left;
+
+    background-color:#25a4bb
   }
-  .important_true{
-    color:blue!important;
+  .icon-img{
+    position: absolute;
+    top:0;
+    left:0;
+    right: 0;
+    bottom :0.44rem;
+    /*background:blue;*/
+    box-sizing :border-box;
+    padding :0.1rem
+  }
+  .icon-img-content{
+    height :100%;
+    display :block;
+    margin:0 auto;
+  }
+  .icon-desc{
+    color: black;
+    /*position: absolute;*/
+    /*top:0;*/
+    /*left:0;*/
+    /*right: 0;*/
+    /*bottom :50px ;*/
   }
 </style>
 
 <body>
 
+<div class="icons">
+  <div class="icon">
+    <div class="icon-img">
+      <img class="icon-img-content" src="http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png"/>
+    </div>
+    <p class="icon-desc">热门景点</p>
+  </div>
 
-<div id="Box">
-  <div class="important_false">这一行末使用important</div>
-  <div class="important_true">这一行使用了important</div>
+
+
+
+  <!--<p>热门景点</p>-->
 </div>
+
 
 
 
