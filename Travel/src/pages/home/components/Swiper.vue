@@ -15,6 +15,10 @@
 <script>
   export default {
     name: "MySwiper",
+    props:{
+      swiperList:Array
+    }
+    ,
     data: function () {
       return {
         swiperOption: {
@@ -23,15 +27,6 @@
           },
           loop:true,
         },
-        swiperList:[
-          {
-            id:'0001',
-            imgUrl:'http://img1.qunarzz.com/qs/1808/e7/d11912e9c7f7c802.jpg'
-          },{
-            id:'0002',
-            imgUrl:'http://img1.qunarzz.com/qs/1808/c8/ec5d00a4e0848602.jpg'
-          }
-        ]
       }
     },
   }

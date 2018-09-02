@@ -16,6 +16,9 @@
 <script>
     export default {
         name: "Icons",
+      props:{
+        iconList:Array
+      },
         data(){
           return{
             list:[
@@ -70,7 +73,7 @@
       computed:{
         pages() {
           const pages=[]
-          this.list.forEach((item,index)=>{
+          this.iconList.forEach((item,index)=>{
             const page=Math.floor(index / 8)
             if(!pages[page]){
               pages[page]=[]
