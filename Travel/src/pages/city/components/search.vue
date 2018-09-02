@@ -13,6 +13,7 @@
 <style lang="stylus" scoped>
   @import "~styles/variables.styl"
   .search
+    position :relative
     height: 0.72rem
     padding:0.1rem
     background :$bgColor
