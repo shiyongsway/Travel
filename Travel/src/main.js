@@ -9,8 +9,9 @@ import 'styles/iconfont.css'
 import fastClick from 'fastclick'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
 import  'swiper/dist/css/swiper.css'
+import vueTouch from 'vue-plugin-touch';
 
-
+Vue.use(vueTouch);
 Vue.use(VueAwesomeSwiper, /* { default global options } */)  //使用这个插件
 Vue.config.productionTip = false
 fastClick.attach(document.body)

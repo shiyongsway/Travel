@@ -19,87 +19,16 @@
       <div class="area">
         <div class="title border-topbottom">热门城市</div>
         <div class="button-list">
-          <div class="button-wraper">
-            <div class="button">北京</div>
-          </div>
-          <div class="button-wraper">
-            <div class="button">北京</div>
-          </div>
-          <div class="button-wraper">
-            <div class="button">北京</div>
+          <div class="button-wraper" v-for="item of hotCities" :key="item.id">
+            <div class="button">{{item.name}}</div>
           </div>
         </div>
       </div>
 
-      <div class="area">
-        <div class="title border-topbottom">A</div>
+      <div class="area" v-for="(item,key) of cities" :key="key" :ref="key">
+        <div class="title border-topbottom">{{key}}</div>
         <div class="item-list">
-          <div class="item border-bottom">阿拉尔</div>
-          <div class="item border-bottom">阿拉尔</div>
-          <div class="item border-bottom">阿拉尔</div>
-          <div class="item border-bottom">阿拉尔</div>
-          <div class="item border-bottom">阿拉尔</div>
-          <div class="item border-bottom">阿拉尔</div>
-          <div class="item border-bottom">阿拉尔</div>
-          <div class="item border-bottom">阿拉尔</div>
-          <div class="item border-bottom">阿拉尔</div>
-          <div class="item border-bottom">阿拉尔</div>
-          <div class="item border-bottom">阿拉尔</div>
-          <div class="item border-bottom">阿拉尔</div>
-          <div class="item border-bottom">阿拉尔</div>
-          <div class="item border-bottom">阿拉尔</div>
-          <div class="item border-bottom">阿拉尔</div>
-          <div class="item border-bottom">阿拉尔</div>
-          <div class="item border-bottom">阿拉尔</div>
-          <div class="item border-bottom">阿拉尔</div>
-          <div class="item border-bottom">阿拉尔</div>
-          <div class="item border-bottom">阿拉尔</div>
-        </div>
-      </div>
-
-      <div class="area">
-        <div class="title border-topbottom">B</div>
-        <div class="item-list">
-          <div class="item border-bottom">阿拉尔</div>
-          <div class="item border-bottom">阿拉尔</div>
-          <div class="item border-bottom">阿拉尔</div>
-          <div class="item border-bottom">阿拉尔</div>
-          <div class="item border-bottom">阿拉尔</div>
-        </div>
-
-      </div>
-
-      <div class="area">
-        <div class="title border-topbottom">C</div>
-        <div class="item-list">
-          <div class="item border-bottom">阿拉尔</div>
-          <div class="item border-bottom">阿拉尔</div>
-          <div class="item border-bottom">阿拉尔</div>
-          <div class="item border-bottom">阿拉尔</div>
-          <div class="item border-bottom">阿拉尔</div>
-        </div>
-
-      </div>
-      <div class="area">
-        <div class="title border-topbottom">D</div>
-        <div class="item-list">
-          <div class="item border-bottom">阿拉尔</div>
-          <div class="item border-bottom">阿拉尔</div>
-          <div class="item border-bottom">阿拉尔</div>
-          <div class="item border-bottom">阿拉尔</div>
-          <div class="item border-bottom">阿拉尔</div>
-        </div>
-
-      </div>
-
-      <div class="area">
-        <div class="title border-topbottom">E</div>
-        <div class="item-list">
-          <div class="item border-bottom">阿拉尔</div>
-          <div class="item border-bottom">阿拉尔</div>
-          <div class="item border-bottom">阿拉尔</div>
-          <div class="item border-bottom">阿拉尔</div>
-          <div class="item border-bottom">阿拉尔</div>
+          <div class="item border-bottom" v-for="innerItem of item" :key="innerItem.id "  @touchmove="handleTouchMove">{{innerItem.name}}</div>
         </div>
       </div>
     </div>
@@ -111,8 +40,28 @@
 
   export default {
     name: "List",
+    methods:{
+      handleTouchMove(){
+        console.log(1111)
+      }
+    },
+    props:{
+      hotCities:Array,
+      cities:Object,
+      letter:String
+    },
     mounted() {
       this.scroll = new Bscroll(this.$refs.wrapper)
+    },
+    watch:{
+      letter (){
+        if(this.letter)
+        {
+          const element = this.$refs[this.letter][0]
+          this.scroll.scrollToElement(element)
+
+        }
+      }
     }
   }
 
@@ -154,5 +103,5 @@
         text-align: left
       .border-bottom
         &:before
-          border-color: #ccc
+          border-color: red
 </style>
