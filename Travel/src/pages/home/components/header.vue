@@ -7,7 +7,7 @@
     <span class="iconfont">&#xe632;</span>
     输入城市</div>
   <router-link to='/city'>
-    <div class="header-right">{{this.city}}
+    <div class="header-right">{{this.currentCity}}
       <span class="iconfont">&#xe64a;</span>
     </div>
   </router-link>
@@ -16,11 +16,18 @@
 </template>
 
 <script>
+import {mapState,mapMutations,mapGetters} from  'vuex'
 
     export default {
         name: "HomeHeader",
       props:{
           city:String
+      },
+      computed:{
+        ...mapState({
+          currentCity:'city'
+        }), //...展开运算符，mapState把vuex里的数据映射到这个计算属性里，把city的共用数据，映射到city这个计算属性里
+        ...mapGetters(['doubleCity'])
       },
     }
 </script>
@@ -46,7 +53,8 @@
       color:#ccc
       text-align :left
     .header-right
-      width :1.24rem
+      min-width :1.04rem
+      padding: 0.1rem
       float :right
       text-align center
       color :#ffffff;

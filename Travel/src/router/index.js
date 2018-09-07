@@ -3,6 +3,7 @@ import Router from 'vue-router'
 // import HelloWorld from '@/components/HelloWorld'
 import Home from '@/pages/home/home'
 import City from '@/pages/city/City'
+import Detail from '@/pages/detail/Detail'
 
 Vue.use(Router)
 export default new Router({
@@ -17,5 +18,13 @@ export default new Router({
       name: 'City',
       component: City
     },
-  ]
+    {
+      path: '/detail/:id',
+      name: 'Detail',
+      component: Detail
+    },
+  ],
+  scrollBehavior(to,from,savePosition) {
+    return{x:0,y:0}
+  }
 })

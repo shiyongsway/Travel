@@ -1,7 +1,7 @@
 <template xmlns:v-touch="http://www.w3.org/1999/xhtml">
   <ul class="list">
     <li class="item" v-for="item of letters" :key="item" :ref="item" @click="handleLetterClick"
-        v-touch:touchstart="handleTouchStart"
+        @touchstart.prevent="handleTouchStart"
         @touchmove="handleTouchMove"
         @touchend="handleTouchEnd"
     >{{item}}</li>

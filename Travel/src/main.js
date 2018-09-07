@@ -10,6 +10,7 @@ import fastClick from 'fastclick'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
 import  'swiper/dist/css/swiper.css'
 import vueTouch from 'vue-plugin-touch';
+import store from './store/index'
 
 Vue.use(vueTouch);
 Vue.use(VueAwesomeSwiper, /* { default global options } */)  //使用这个插件
@@ -20,6 +21,7 @@ fastClick.attach(document.body)
 new Vue({
   el: '#app',
   router,
+  store,
   components: { App },
   template: '<App/>'
 })
