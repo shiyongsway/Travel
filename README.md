@@ -1,7 +1,7 @@
 # Travel
 
 #### Description
-慕课网教程专用
+自己写的仿去哪网移动版前端代码
 
 #### Software Architecture
 Software architecture description
